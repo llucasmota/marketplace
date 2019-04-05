@@ -3,6 +3,9 @@
     "express": "^4.16.4",
     "mongoose": "^5.4.21"
   },
+  "scripts": {
+    "start": "nodemon src/index.js js"
+  },
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",

@@ -5,7 +5,7 @@ const databaseConfig = require('./src/config/database')
 class App {
   constructor () {
     this.express = express()
-    this.isDev = process.env.NODE_ENV != 'production'
+    this.isDev = process.env.NODE_ENV !== 'production'
 
     this.database()
     this.middlewares()
