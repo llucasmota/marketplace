@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.16.4",
     "mongoose": "^5.4.21"
   },
