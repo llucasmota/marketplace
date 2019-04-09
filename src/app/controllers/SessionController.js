@@ -11,7 +11,7 @@ class SessionController {
     if (!(await user.compareHash(password))) {
       return res.status(400).json({ error: 'invalid password' })
     }
-    return res.json({ user })
+    return res.json({ user, token: User.generateToken(user) })
   }
 }
 
