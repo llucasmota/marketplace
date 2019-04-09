@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -32,5 +33,18 @@ UserSchema.pre('save', async function (next) {
   }
   this.password = await bcrypt.hash(this.password, 8)
 })
-
+UserSchema.methods = {
+  compareHash (password) {
+    return bcrypt.compare(password, this.password)
+  }
+}
+UserSchema.statics = {
+  generateToken ({ id }) {
+    // gera token de acordo como id
+    return jwt.sign({ id }, 'GoNode03', {
+      // informa o que terá no jwt: o id do user, nome da aplicação
+      expiresIn: 86400 // em quanto tempo expira
+    })
+  }
+}
 module.exports = mongoose.model('User', UserSchema)
