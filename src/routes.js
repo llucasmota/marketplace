@@ -7,6 +7,15 @@ const authMiddleware = require('./app/middlewares/auth')
 
 routes.post('/users', controllers.UserController.store)
 routes.post('/sessions', controllers.SessionController.store)
-routes.get('/teste', authMiddleware, (req, res) => res.json({ ok: true }))
+// toda rota a partir da rota abaixo estará sujeita ao authMiddleware
+routes.use(authMiddleware)
+/**
+ * ads
+ */
+routes.get('/ads', controllers.AdController.index)
+routes.get('/ads/:id', controllers.AdController.show)
+routes.post('/ads', controllers.AdController.store)
+routes.put('/ads/:id', controllers.AdController.update)
+routes.delete('/ads/:id', controllers.AdController.destroy)
 
 module.exports = routes
