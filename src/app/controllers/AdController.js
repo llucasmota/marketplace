@@ -11,10 +11,11 @@ class AdController {
       if (req.query.price_max) {
         filters.price.$lte = req.query.price_max
       }
-      if (req.query.title) {
-        filters.title = new RegExp(req.query.title, 'i')
-      }
     }
+    if (req.query.title) {
+      filters.title = new RegExp(req.query.title, 'i')
+    }
+
     const ads = await Ad.paginate(filters, {
       page: req.query.page || 1, // req.query.page é para o caso de haver informado um parametro de paginação
       limit: 20,
