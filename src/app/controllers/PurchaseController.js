@@ -12,8 +12,9 @@ class PurchaseController {
     await Mail.sendMail({
       from: '"Lucas Mota" <lucas.o.mota@gmail.com>',
       to: purchaseAd.author.email,
-      subject: 'Solicitação de compra',
-      html: `<p>Teste ${content}</p>`
+      subject: `Solicitação de compra${purchaseAd.title}`,
+      template: 'purchase',
+      context: { user, content, ad: purchaseAd }
     })
     return res.send()
   }
