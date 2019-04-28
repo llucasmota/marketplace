@@ -39,6 +39,9 @@ UserSchema.methods = {
     return bcrypt.compare(password, this.password)
   }
 }
+/**
+ * Este método é estático, pois não invoca uma instância, mas o próprio UserSchema
+ */
 UserSchema.statics = {
   generateToken ({ id }) {
     // gera token de acordo como id
