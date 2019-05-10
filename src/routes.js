@@ -53,5 +53,6 @@ routes.put(
   '/purchases/:id',
   handle(controllers.ApprovePurchaseController.update)
 )
+routes.get('/purchases/', handle(controllers.PurchaseController.index))
 
 module.exports = routes

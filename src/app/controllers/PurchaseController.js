@@ -26,5 +26,14 @@ class PurchaseController {
 
     return res.json(purchaseSave)
   }
+
+  async index (req, res) {
+    const user = await User.findById(req.userId)
+    const myPurchase = await Ad.findOne({
+      author: user._id,
+      purchasedBy: { $ne: null }
+    })
+    return res.status(200).json(myPurchase)
+  }
 }
 module.exports = new PurchaseController()
