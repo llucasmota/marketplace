@@ -2,8 +2,8 @@ const Ad = require('../models/Ad')
 const User = require('../models/User')
 const Purchase = require('../models/Purchase')
 const Mail = require('../services/Mail')
-const Queue = require('../services/Queue')
 const PurchaseMail = require('../jobs/PurchaseMail')
+const Queue = require('../services/Queue')
 
 class PurchaseController {
   async store (req, res) {
