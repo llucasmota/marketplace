@@ -17,10 +17,7 @@
 
 ### Mongo DB
 
-- Image: Mongo
-- Comando: docker run --name mongonode -p 27017:27017 -d -t mongo
+- No terminal: `docker run --name mongonode -p 27017:27017 -d -t mongo`
+- A partir desse momento o mongoDB passará a responder na porta 27017 da máquina e estará pronto para uso
 
 #### Configuração do ORM(mongoose):
-
-- _yarn add mongoose_
-- adicionar database no constructor

@@ -33,6 +33,12 @@ class PurchaseController {
       author: user._id,
       purchasedBy: { $ne: null }
     })
+
+    if (!myPurchase) {
+      return res
+        .status(400)
+        .json({ erro: 'Você não possui nenhuma venda aprovada' })
+    }
     return res.status(200).json(myPurchase)
   }
 }
