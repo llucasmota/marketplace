@@ -11,13 +11,23 @@
 
 - O expressJs é utilizado como Middleware
 - O banco utilizado é o MongoDB
-  - Para comunicação com o MongoDB utilizei o Mongoose
+- ORM utilizado: Mongoose
 
 ## Como podemos preparar o ambiente para o projeto?
+
+### Clonando o projeto
+
+- No terminal: `git clone https://github.com/llucasmota/marketplace.git`
+
+### Instalando as dependências:
+
+- Na raiz do projeto: `npm install`
+
+### Start do projeto
+
+- No terminal; `yarn start`
 
 ### Mongo DB
 
 - No terminal: `docker run --name mongonode -p 27017:27017 -d -t mongo`
 - A partir desse momento o mongoDB passará a responder na porta 27017 da máquina e estará pronto para uso
-
-#### Configuração do ORM(mongoose):
